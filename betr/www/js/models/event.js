@@ -7,13 +7,12 @@ Event.$inject = ['$resource', 'API'];
 function Event($resource, API) {
 
 	return $resource(
-		API + 'events', 
-		null, 
+		API + 'events',
+		null,
 		{
-			'query' : { 
+			'query' : {
 				method: 'GET',
-				headers: { self.token },
-				isArray: false
+				isArray: true
 			}
 		}
 	);

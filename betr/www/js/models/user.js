@@ -14,7 +14,7 @@ function User($resource, API) {
         method: 'POST',
       },
       'balance': {
-        url: API + 'balance'
+        url: API + 'balance',
         method: 'GET',
       }
     }
