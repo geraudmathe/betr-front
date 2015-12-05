@@ -19,5 +19,19 @@
 	</div>
   <div ng-show="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
     <h1 class="wh-white light-text animated fadeInUp">Welcome {{ users.firstName }}</h1>
+    <form ng-submit="users.logout()">
+      <button type="submit" class="pure-button wh-gold-bg">Logout</button>
+    </form>
+  </div>
+</div>
+
+<div class="pure-g push-down-25" ng-controller="eventsController as events">
+  <div class="pure-u-1-8 center-text centered">
+    <form ng-submit="events.getEvents()">
+      <button type="submit" class="pure-button wh-gold-bg">Get events</button>
+    </form>
+    <ul ng-repeat="event in events.all">
+      <li>{{ event.name }} - {{ event.class.type.event.home }} v {{ event.class.type.event.away }}</li>
+    </ul>
   </div>
 </div>

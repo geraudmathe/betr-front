@@ -11,7 +11,7 @@ function User($resource, API) {
     {
       'authorize': {
         url: API + 'session',
-        method: 'POST',
+        method: 'POST'
       },
       'balance': {
         url: API + 'balance',
