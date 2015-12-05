@@ -1,1 +1,17 @@
 /* Empty. Add your own CSS if you like */
+
+* {
+  background-color: #003056; /* William Hill Dark Blue */
+}
+
+.wh-gold {
+  color: #FFD500; /* William Hill Gold */
+}
+
+.wh-dark-blue {
+  color: #003056; /* William Hill Dark Blue */
+}
+
+.wh-light-blue {
+  color: #229BD3; /* William Hill Light Blue */
+}
