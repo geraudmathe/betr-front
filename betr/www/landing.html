@@ -5,10 +5,16 @@
   </div>
 </div>
 
-<div class="pure-g push-down-50">
-  <div class="pure-u-1-1 center-text">
-    <p class="wh-gold">
-      Sign In
-    </p>
-  </div>
+<div class="pure-g push-down-25" ng-controller="UsersController as users">
+	<div class="pure-u-1-8 center-text centered">
+		<form class="pure-form pure-form-stacked">
+	    <fieldset>
+        <input class="wh-white-bg" id="username" type="text" placeholder="Username">
+        <input class="wh-white-bg" id="password" type="password" placeholder="Password">
+        <div class="push-down-25">
+        	<button type="submit" class="pure-button wh-gold-bg">Sign in</button>
+        </div>
+	    </fieldset>
+		</form>
+	</div>
 </div>
