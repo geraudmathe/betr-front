@@ -15,3 +15,23 @@
 .wh-light-blue {
   color: #229BD3; /* William Hill Light Blue */
 }
+
+.wh-white {
+  color: #ffffff;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.push-down-100 {
+  margin-top: 100px;
+}
+
+.push-down-50 {
+  margin-top: 50px;
+}
+
+h3 {
+  font-weight: 200;
+}
