@@ -6,8 +6,9 @@ TicketService.$inject = ['$window', 'jwtHelper'];
 function TicketService($window, jwthelper) {
   var _this = this;
 
-  _this.saveTicket = function(ticket) {
-    return $window.localStorage.setItem('betr-ticket', ticket);
+  _this.saveTicket = function(data) {
+    $window.localStorage.setItem('betr-user-data', JSON.stringify(data));
+    return $window.localStorage.setItem('betr-ticket', data.ticket);
   };
 
   _this.getTicket = function() {

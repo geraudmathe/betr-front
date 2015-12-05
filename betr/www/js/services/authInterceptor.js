@@ -9,15 +9,15 @@ function AuthInterceptor(API, TicketService) {
       var ticket = TicketService.getTicket();
 
       if (config.url.indexOf(API) === 0 && ticket) {
-        config.headers.Authorization = 'Bearer ' + ticket;
+        config.headers.ticket = ticket;
       };
 
       return config;
     },
 
     response: function(res) {
-      if (res.config.url.indexOf(API) === 0 && res.data.ticket) {
-        TicketService.saveTicket(res.data.ticket);
+      if (res.config.url.indexOf(API) === 0 && res.data) {
+        TicketService.saveTicket(res.data);
       };
 
       return res;
