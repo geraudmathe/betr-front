@@ -1,0 +1,37 @@
+<div class="pure-g push-down-100">
+  <div class="pure-u-1-1 center-text">
+    <h1 class="wh-gold animated fadeInLeft">Betr</h1>
+    <h3 class="wh-white animated fadeInRight">Betr Betting</h3>
+  </div>
+</div>
+
+<div class="pure-g push-down-25" ng-controller="UsersController as users">
+	<div ng-hide="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
+		<form ng-submit="users.authorize()" class="pure-form pure-form-stacked">
+	    <fieldset>
+        <input class="wh-white-bg" ng-model="users.user.username" name="username" id="username" type="text" placeholder="Username">
+        <input class="wh-white-bg" ng-model="users.user.password" name="password" id="password" type="password" placeholder="Password">
+        <div class="push-down-25">
+        	<button type="submit" class="pure-button wh-gold-bg">Sign in</button>
+        </div>
+	    </fieldset>
+		</form>
+	</div>
+  <div ng-show="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
+    <h1>Hi {{ users.firstName }}</h1>
+    <form ng-submit="users.logout()">
+      <button type="submit" class="pure-button wh-gold-bg">Logout</button>
+    </form>
+  </div>
+</div>
+
+<div class="pure-g push-down-25" ng-controller="eventsController as events">
+  <div class="pure-u-1-8 center-text centered">
+    <form ng-submit="events.getEvents()">
+      <button type="submit" class="pure-button wh-gold-bg">Get events</button>
+    </form>
+    <ul ng-repeat="event in events.all">
+      <li>{{ event.name }} - {{ event.class.type.event.home }} v {{ event.class.type.event.away }}</li>
+    </ul>
+  </div>
+</div>

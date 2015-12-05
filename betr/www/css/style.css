@@ -89,3 +89,71 @@ input {
   margin: 20px auto; }
   #source a {
     color: #C7433E; }
+/* Empty. Add your own CSS if you like */
+
+* {
+  background-color: #003056; /* William Hill Dark Blue */
+}
+
+.wh-gold {
+  color: #FFD500; /* William Hill Gold */
+}
+
+.wh-dark-blue {
+  color: #003056; /* William Hill Dark Blue */
+}
+
+.wh-light-blue {
+  color: #229BD3; /* William Hill Light Blue */
+}
+
+.clock-background {
+  /* Setting default text color, background and a font stack */
+  color:#dddddd;
+  font-size:13px;
+  background: #302b23;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#fancyClock {
+  margin:40px auto;
+  height:200px;
+  border:1px solid #111111;
+  width:600px;
+}
+
+.wh-white {
+  color: #ffffff;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.centered {
+	margin: 0 auto;
+}
+
+.push-down-100 {
+  margin-top: 100px;
+}
+
+.push-down-50 {
+  margin-top: 50px;
+}
+
+.push-down-25 {
+  margin-top: 25px;
+}
+
+h3 {
+  font-weight: 200;
+}
+
+.wh-gold-bg {
+	background-color: #FFD500;
+}
+
+.wh-white-bg {
+  background-color: #ffffff;
+}

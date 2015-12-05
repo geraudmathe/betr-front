@@ -7,8 +7,9 @@
 // 'starter.controllers' is found in controllers.js
 
 angular
-  .module('betr', ['ionic', 'ui.router', 'angular-swing'])
-  .config(MainRouter)
+  .module('betr', ['ionic', 'ui.router', 'angular-jwt', 'ngResource', 'angular-swing'])
+  .config(MainConfig)
+  .constant('API', 'http://betr-betting.herokuapp.com/')
   .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -23,7 +24,7 @@ angular
   });
 });
 
-function MainRouter($stateProvider, $urlRouterProvider) {
+function MainConfig($stateProvider, $urlRouterProvider, $httpProvider) {
   $stateProvider
   .state('landing', {
     url: '/',
@@ -32,11 +33,13 @@ function MainRouter($stateProvider, $urlRouterProvider) {
   .state('swipe', {
     url: '/swipe',
     templateUrl: 'swipe.html',
-  })
-  .state('confirmation', {
-    url: '/confirmation',
-    templateUrl: 'confirmation.html',
   });
+  // .state('confirmation', {
+  //   url: '/confirmation',
+  //   templateUrl: 'confirmation.html',
+  // });
 
   $urlRouterProvider.otherwise('/');
+
+  $httpProvider.interceptors.push('authInterceptor');
 };
