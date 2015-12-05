@@ -11,6 +11,10 @@ function UsersController(User, TicketService) {
     _this.firstName = res.firstName;
   };
 
+  function handleBalance(res) {
+    _this.balance = res.balance;
+  };
+
   _this.authorize = function() {
     User.authorize(_this.user, handleAuth);
   };
@@ -21,12 +25,17 @@ function UsersController(User, TicketService) {
   };
 
   _this.getBalance = function() {
-    User.balance();
+    User.balance(true, handleBalance);
   };
 
   _this.isLoggedIn = function() {
     return !!TicketService.getTicket();
   };
+
+  _this.showingBalance = function() {
+    return !!_this.balance;
+  };
+
 
   if (_this.isLoggedIn()) {
     var data = JSON.parse(window.localStorage.getItem('betr-user-data'));

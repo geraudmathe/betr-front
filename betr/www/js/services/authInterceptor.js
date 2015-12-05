@@ -16,7 +16,7 @@ function AuthInterceptor(API, TicketService) {
     },
 
     response: function(res) {
-      if (res.config.url.indexOf(API) === 0 && res.data) {
+      if (res.config.url.indexOf(API) === 0 && res.data.ticket) {
         TicketService.saveTicket(res.data);
       };
 

@@ -16,7 +16,7 @@ function TicketService($window, jwthelper) {
   };
 
   _this.removeTicket = function() {
+    $window.localStorage.removeItem('betr-user-data');
     return $window.localStorage.removeItem('betr-ticket');
   };
-
 };

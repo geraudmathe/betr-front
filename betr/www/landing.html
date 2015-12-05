@@ -19,15 +19,19 @@
 	</div>
   <div ng-show="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
     <h1 class="wh-white light-text animated fadeInUp">Welcome {{ users.firstName }}</h1>
-    <form ng-submit="users.logout()">
+    <form class="animated fadeIn" ng-submit="users.logout()">
       <button type="submit" class="pure-button wh-gold-bg">Logout</button>
     </form>
+    <form class="animated fadeIn" ng-submit="users.getBalance()">
+      <button type="submit" class="pure-button wh-gold-bg">Get Balance</button>
+    </form>
+    <h1 ng-show="users.showingBalance()" class="wh-white light-text animated fadeIn">Your balance is: £{{ users.balance }}</h1>
   </div>
 </div>
 
 <div class="pure-g push-down-25" ng-controller="eventsController as events">
   <div class="pure-u-1-8 center-text centered">
-    <form ng-submit="events.getEvents()">
+    <form class="animated fadeIn" ng-submit="events.getEvents()">
       <button type="submit" class="pure-button wh-gold-bg">Get events</button>
     </form>
     <ul ng-repeat="event in events.all">
