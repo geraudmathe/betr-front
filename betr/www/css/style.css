@@ -24,6 +24,10 @@
   text-align: center;
 }
 
+.centered {
+	margin: 0 auto;
+}
+
 .push-down-100 {
   margin-top: 100px;
 }
@@ -32,10 +36,18 @@
   margin-top: 50px;
 }
 
+.push-down-25 {
+  margin-top: 25px;
+}
+
 h3 {
   font-weight: 200;
 }
 
 .wh-gold-bg {
 	background-color: #FFD500;
+}
+
+.wh-white-bg {
+  background-color: #ffffff;
 }
