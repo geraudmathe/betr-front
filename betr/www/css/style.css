@@ -16,14 +16,7 @@
   color: #229BD3; /* William Hill Light Blue */
 }
 
-
-body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
-  /* Simple page reset */
-  margin:0;
-  padding:0;
-}
-
-body{
+.clock-background {
   /* Setting default text color, background and a font stack */
   color:#dddddd;
   font-size:13px;
@@ -31,9 +24,30 @@ body{
   font-family:Arial, Helvetica, sans-serif;
 }
 
-#fancyClock{
+#fancyClock {
   margin:40px auto;
   height:200px;
   border:1px solid #111111;
   width:600px;
 }
+
+.wh-white {
+  color: #ffffff;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.push-down-100 {
+  margin-top: 100px;
+}
+
+.push-down-50 {
+  margin-top: 50px;
+}
+
+h3 {
+  font-weight: 200;
+}
+
