@@ -2,14 +2,14 @@ angular
   .module('betr')
   .factory('authInterceptor', AuthInterceptor);
 
-AuthInterceptor.$inject = ['API', 'TokenService'];
-function AuthInterceptor(API, TokenService) {
+AuthInterceptor.$inject = ['API', 'TicketService'];
+function AuthInterceptor(API, TicketService) {
   return {
     request: function(config) {
-      var token = TokenService.getToken();
+      var ticket = TicketService.getTicket();
 
-      if (config.url.indexOf(API) === 0 && token) {
-        config.headers.Authorization = 'Bearer ' + token;
+      if (config.url.indexOf(API) === 0 && ticket) {
+        config.headers.Authorization = 'Bearer ' + ticket;
       };
 
       return config;
@@ -17,7 +17,7 @@ function AuthInterceptor(API, TokenService) {
 
     response: function(res) {
       if (res.config.url.indexOf(API) === 0 && res.data.ticket) {
-        TokenService.saveToken(res.data.ticket);
+        TicketService.saveTicket(res.data.ticket);
       };
 
       return res;

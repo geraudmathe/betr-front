@@ -1,18 +1,14 @@
 angular
 	.module('betr')
-	.controller('eventsController', EventsController)
+	.controller('eventsController', EventsController);
 
 EventsController.$inject = ['Bet'];
-
 function EventsController(Bet) {
+	var _this = this;
+	_this.all = [];
+	_this.bet = {};
 
-	var self = this;
-
-	self.all = [];
-	self.bet = {};
-
-	self.getEvents = function() {
-		self.all = Bet.query();
-	}
-
-}
+	_this.getEvents = function() {
+		_this.all = Bet.query();
+	};
+};
