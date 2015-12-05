@@ -1,21 +1,21 @@
 angular
 	.module('betr')
-	.controller('eventsController', EventsController)
+	.controller('eventsController', EventsController);
 
-EventsController.$inject = ['Event'];
+EventsController.$inject = ['Event', 'TicketService'];
 
 function EventsController(Event) {
 
-	var self = this;
+	var _this = this;
 
-	self.all = [];
-	self.singleEvent = {};
-	self.token = {};
+	_this.all = [];
+	_this.singleEvent = {};
+	_this.token = {};
 
-	self.getEvents = function() {
-		self.token = TokenService.getToken();
-		self.all = Event.query(self.token);
-		console.log(self.all);
+	_this.getEvents = function() {
+		_this.ticket = TicketService.getTicket();
+		_this.all = Event.query();
+		console.log(_this.all);
 	}
 
 }

@@ -2,14 +2,14 @@ angular
   .module('betr')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'TokenService'];
-function UsersController(User, TokenService) {
+UsersController.$inject = ['User', 'TicketService'];
+function UsersController(User, TicketService) {
   var _this = this;
   _this.user = {};
 
   function handleAuth(res) {
-    var token = res.ticket? res.ticket : null;
-    _this.firstName = res.firstName ? res.firstName : "there!";
+    var ticket = res.ticket? res.ticket : null;
+    _this.firstName = res.firstName ? res.firstName : 'there!';
   };
 
   _this.authorize = function() {
@@ -17,12 +17,12 @@ function UsersController(User, TokenService) {
   };
 
   _this.logout = function() {
-    TokenService.removeToken();
+    TicketService.removeTicket();
     _this.user = {};
   };
 
   _this.isLoggedIn = function() {
-    return !!TokenService.getToken();
+    return !!TicketService.getTicket();
   };
 
   return _this;
