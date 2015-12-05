@@ -16,8 +16,8 @@ function AuthInterceptor(API, TokenService) {
     },
 
     response: function(res) {
-      if (res.config.url.indexOf(API) === 0 && res.data.token) {
-        TokenService.saveToken(res.data.token);
+      if (res.config.url.indexOf(API) === 0 && res.data.ticket) {
+        TokenService.saveToken(res.data.ticket);
       };
 
       return res;

@@ -6,7 +6,7 @@
 </div>
 
 <div class="pure-g push-down-25" ng-controller="UsersController as users">
-	<div class="pure-u-1-8 center-text centered">
+	<div ng-hide="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
 		<form ng-submit="users.authorize()" class="pure-form pure-form-stacked">
 	    <fieldset>
         <input class="wh-white-bg" ng-model="users.user.username" name="username" id="username" type="text" placeholder="Username">
@@ -17,4 +17,7 @@
 	    </fieldset>
 		</form>
 	</div>
+  <div ng-show="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
+    <h1>Hi {{ users.firstName }}</h1>
+  </div>
 </div>

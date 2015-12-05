@@ -18,8 +18,4 @@ function TokenService($window, jwthelper) {
     return $window.localStorage.removeItem('betr-token');
   };
 
-  _this.decodeToken = function() {
-    var token = _this.getToken();
-    return token ? jwthelper.decodeToken(token) : {};
-  };
 };

@@ -9,10 +9,7 @@ function UsersController(User, TokenService) {
 
   function handleAuth(res) {
     var token = res.ticket? res.ticket : null;
-    console.log(token);
-    if (token) {
-      _this.user = TokenService.decodeToken();
-    };
+    _this.firstName = res.firstName ? res.firstName : "there!";
   };
 
   _this.authorize = function() {
@@ -26,10 +23,6 @@ function UsersController(User, TokenService) {
 
   _this.isLoggedIn = function() {
     return !!TokenService.getToken();
-  };
-
-  if (_this.isLoggedIn()) {
-    _this.user = TokenService.decodeToken();
   };
 
   return _this;
