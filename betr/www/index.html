@@ -34,8 +34,6 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/controllers/cardsController.js"></script>
-    <script type="text/javascript" src="js/models/cards.js"></script>
     <script src="js/models/user.js"></script>
     <script src="js/models/event.js"></script>
     <script src="js/controllers/usersController.js"></script>
@@ -51,20 +49,6 @@
     <ion-pane>
       <ion-content>
         <div ui-view>
-        <section ng-controller="cardsController as cards">  
-          <ul swing-stack>
-              <li swing-card
-                swing-on-throwout="console.log(eventName, eventObject)"
-                swing-on-throwoutleft="console.log(eventName, eventObject)"
-                swing-on-throwoutright="console.log(eventName, eventObject)"
-                swing-on-throwin="console.log(eventName, eventObject)"
-                swing-on-dragstart="console.log(eventName, eventObject)"
-                swing-on-dragmove="console.log(eventName, eventObject)"
-                swing-on-dragend="console.log(eventName, eventObject)"
-              >
-              </li>
-          </ul>
-        </section>
         </div>
       </ion-content>
     </ion-pane>
