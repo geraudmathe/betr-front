@@ -12,8 +12,7 @@ function Event($resource, API) {
 		{
 			'query' : { 
 				method: 'GET',
-				headers: { self.token },
-				isArray: false
+				isArray: true
 			}
 		}
 	);
