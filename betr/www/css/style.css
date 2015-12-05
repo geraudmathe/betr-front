@@ -15,3 +15,25 @@
 .wh-light-blue {
   color: #229BD3; /* William Hill Light Blue */
 }
+
+
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+  /* Simple page reset */
+  margin:0;
+  padding:0;
+}
+
+body{
+  /* Setting default text color, background and a font stack */
+  color:#dddddd;
+  font-size:13px;
+  background: #302b23;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#fancyClock{
+  margin:40px auto;
+  height:200px;
+  border:1px solid #111111;
+  width:600px;
+}
