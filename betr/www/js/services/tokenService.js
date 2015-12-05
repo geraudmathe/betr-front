@@ -2,8 +2,9 @@ angular
   .module('betr')
   .service('TokenService', TokenService);
 
-TokenService.$inject = ['$window', 'jwthelper'];
+TokenService.$inject = ['$window', 'jwtHelper'];
 function TokenService($window, jwthelper) {
+  console.log(jwthelper)
   var _this = this;
 
   _this.saveToken = function(token) {
