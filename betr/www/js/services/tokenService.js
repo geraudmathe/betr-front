@@ -4,7 +4,6 @@ angular
 
 TokenService.$inject = ['$window', 'jwtHelper'];
 function TokenService($window, jwthelper) {
-  console.log(jwthelper)
   var _this = this;
 
   _this.saveToken = function(token) {

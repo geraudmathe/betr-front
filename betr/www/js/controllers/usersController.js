@@ -8,8 +8,8 @@ function UsersController(User, TokenService) {
   _this.user = {};
 
   function handleAuth(res) {
-    var token = res.token? res.token : null;
-
+    var token = res.ticket? res.ticket : null;
+    console.log(token);
     if (token) {
       _this.user = TokenService.decodeToken();
     };

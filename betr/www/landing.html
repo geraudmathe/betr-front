@@ -7,10 +7,10 @@
 
 <div class="pure-g push-down-25" ng-controller="UsersController as users">
 	<div class="pure-u-1-8 center-text centered">
-		<form class="pure-form pure-form-stacked">
+		<form ng-submit="users.authorize()" class="pure-form pure-form-stacked">
 	    <fieldset>
-        <input class="wh-white-bg" id="username" type="text" placeholder="Username">
-        <input class="wh-white-bg" id="password" type="password" placeholder="Password">
+        <input class="wh-white-bg" ng-model="users.user.username" name="username" id="username" type="text" placeholder="Username">
+        <input class="wh-white-bg" ng-model="users.user.password" name="password" id="password" type="password" placeholder="Password">
         <div class="push-down-25">
         	<button type="submit" class="pure-button wh-gold-bg">Sign in</button>
         </div>
