@@ -5,7 +5,6 @@ angular
 UsersController.$inject = ['User', 'TicketService'];
 function UsersController(User, TicketService) {
   var _this = this;
-  _this.user = {};
 
   function handleAuth(res) {
     var ticket = res.ticket? res.ticket : null;

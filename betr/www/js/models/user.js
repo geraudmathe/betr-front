@@ -4,7 +4,7 @@ angular
 
 User.$inject = ['$resource', 'API'];
 function User($resource, API) {
-  
+
   return $resource(
     API + 'session',
     {},
@@ -12,6 +12,10 @@ function User($resource, API) {
       'authorize': {
         url: API + 'session',
         method: 'POST',
+      },
+      'balance': {
+        url: API + 'balance'
+        method: 'GET',
       }
     }
   );
