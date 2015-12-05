@@ -1,9 +1,9 @@
 angular
   .module('betr')
-  .controlelr('UserController', UserController);
+  .controlelr('UsersController', UsersController);
 
-UserController.$inject = ['User', 'TokenService'];
-function UserController(User, TokenService) {
+UsersController.$inject = ['User', 'TokenService'];
+function UsersController(User, TokenService) {
   var _this = this;
   _this.user = {};
 
