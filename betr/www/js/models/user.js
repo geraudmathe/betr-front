@@ -3,7 +3,7 @@ angular
   .factory('User', User);
 
 User.$inect = ['$resource', 'API'];
-function user($resource, API) {
+function User($resource, API) {
 
   return $resource(
     API + 'session',

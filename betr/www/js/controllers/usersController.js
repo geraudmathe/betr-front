@@ -1,6 +1,6 @@
 angular
   .module('betr')
-  .controlelr('UsersController', UsersController);
+  .controller('UsersController', UsersController);
 
 UsersController.$inject = ['User', 'TokenService'];
 function UsersController(User, TokenService) {
