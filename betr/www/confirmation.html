@@ -4,12 +4,12 @@
       <span class="wh-white light-text">Confim your</span><span class="wh-gold"> BET</span>
     </h1>
   </div>
-  <div class="push-down-50 pure-g text-center">
+  <div class="push-down-50 pure-g text-center" ng-controller="currentController as current">
     <div class="pure-u-1-3">
       <form ng-hide="users.betAmount == 5" ng-submit="users.placeBet(5)">
         <button type="submit" class="pure-button bet-button">£5</button>
       </form>
-      <form ng-show="users.betAmount == 5" ng-submit="users.confirmBet(5)">
+      <form ng-show="users.betAmount == 5" ng-submit="users.confirmBet(5, current.current.class.type.event[1].market.outcome[0].id, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceNum, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceDen)">
         <button type="submit" class="pure-button bet-button">Confirm £5</button>
       </form>
     </div>
@@ -17,7 +17,7 @@
       <form ng-hide="users.betAmount == 10" ng-submit="users.placeBet(10)">
         <button type="submit" class="pure-button pure-button-active bet-button">£10</button>
       </form>
-      <form ng-show="users.betAmount == 10" ng-submit="users.confirmBet(10)">
+      <form ng-show="users.betAmount == 10" ng-submit="users.confirmBet(10, current.current.class.type.event[1].market.outcome[0].id, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceNum, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceDen)">
         <button type="submit" class="pure-button pure-button-active bet-button">Confirm £10</button>
       </form>
     </div>
@@ -25,7 +25,7 @@
       <form ng-hide="users.betAmount == 20" ng-submit="users.placeBet(20)">
         <button type="submit" class="pure-button bet-button">£20</button>
       </form>
-      <form ng-show="users.betAmount == 20" ng-submit="users.confirmBet(20)">
+      <form ng-show="users.betAmount == 20" ng-submit="users.confirmBet(20, current.current.class.type.event[1].market.outcome[0].id, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceNum, current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceDen)">
         <button type="submit" class="pure-button bet-button">Confirm £20</button>
       </form>
     </div>
