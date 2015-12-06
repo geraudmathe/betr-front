@@ -43,6 +43,10 @@ function UsersController(User, TicketService, $state) {
     };
   };
 
+  _this.placeBet = function(amount) {
+    console.log('betting ' + amount);
+  };
+
   if (_this.isLoggedIn()) {
     var data = JSON.parse(window.localStorage.getItem('betr-user-data'));
     _this.firstName = data.firstName;
