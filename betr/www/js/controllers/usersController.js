@@ -9,6 +9,7 @@ function UsersController(User, TicketService, $state) {
 
   function handleAuth(res) {
     _this.firstName = res.firstName;
+    _this.getBalance();
   };
 
   function handleBalance(res) {

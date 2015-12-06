@@ -19,15 +19,12 @@
   		</form>
   	</div>
     <div ng-show="users.isLoggedIn()" class="pure-u-1-1 center-text centered">
-      <h1 class="wh-white light-text animated fadeInUp">Welcome {{ users.firstName }}</h1>
-      <h2 class="animated fadeIn"><span class="wh-white light-text">Swipe </span><span class="wh-gold"> RIGHT</span><span class="wh-white light-text"> to start!</span></h2>
-      <form class="animated fadeIn" ng-submit="users.logout()">
+      <h3 class="wh-white light-text animated fadeInUp">Welcome {{ users.firstName }}</h3>
+      <h2 class="animated fadeIn"><span class="wh-white light-text">Swipe </span><span class="wh-gold"> RIGHT</span><span class="wh-white light-text"> to start!</span></h2><br>
+      <h4 ng-show="users.showingBalance()" class="wh-white light-text animated fadeInDown">Your balance is: £{{ users.balance }}</h4>
+      <form class="animated fadeIn push-down-50" ng-submit="users.logout()">
         <button type="submit" class="pure-button wh-gold-bg">Logout</button>
       </form>
-      <form class="animated fadeIn" ng-submit="users.getBalance()">
-        <button type="submit" class="pure-button wh-gold-bg">Get Balance</button>
-      </form>
-      <h1 ng-show="users.showingBalance()" class="wh-white light-text animated fadeIn">Your balance is: £{{ users.balance }}</h1>
-    </div>
+      </div>
   </div>
 </div>
