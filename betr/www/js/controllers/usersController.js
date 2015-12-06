@@ -50,7 +50,7 @@ function UsersController(User, TicketService, $state) {
   _this.confirmBet = function(amount, id, priceNum, priceDen) {
     // place the bet with will
 
-    Event.bet(amount, id, priceNum, priceDen, function() {
+    Bet.bet(amount, id, priceNum, priceDen, function() {
       console.log('Bet placed sucessfully');
     });
   };
