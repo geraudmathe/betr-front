@@ -47,4 +47,6 @@ function EventsController(Event, TicketService) {
   _this.cardSwipedRight = function(index) {
     _this.addCard();
   };
+
+  _this.getEvents();
 };
