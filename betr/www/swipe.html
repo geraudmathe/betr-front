@@ -8,4 +8,8 @@
       </div>
     </td-card>
   </td-cards>
+  <h1>{{ events.currentEvent.name }}</h1>
+  <form class="animated fadeIn" ng-submit="events.getEvents()">
+    <button type="submit" class="pure-button wh-gold-bg">Get Events</button>
+  </form>
 </div>

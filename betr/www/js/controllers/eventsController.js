@@ -1,49 +1,50 @@
 angular
-	.module('betr')
-	.controller('eventsController', EventsController);
+  .module('betr')
+  .controller('eventsController', EventsController);
 
 EventsController.$inject = ['Event', 'TicketService'];
 
 function EventsController(Event, TicketService) {
+  var _this = this;
+  _this.all = [];
+  _this.index = 0;
+	_this.currentEvent = {};
 
-	var _this = this;
+  function updateCurrentEvent(res) {
+    console.log(res);
+    _this.all = res;
+    _this.currentEvent = _this.all[_this.index];
 
-	_this.all = [];
-	_this.index = 0;
+    // console.log(_this.currentEvent);
+  };
 
-	_this.getEvents = function() {
-		var ticket = TicketService.getTicket();
-		_this.all = Event.query();
-		console.log(_this.all);
-		_this.currentEvent = _this.all[_this.index];
-	}
+  _this.getEvents = function() {
+    Event.query(true, updateCurrentEvent);
+  };
 
-  var cardTypes = [
-    { image: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png' }
-  ];
+  _this.events = [
+		{image: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'},
+		{image: 'https://pbs.twimg.com/profile_images/663437842417360896/bryFPXSy.jpg'},
+		{image: 'https://pbs.twimg.com/profile_images/672036189273120768/4_Esv2H4.jpg'},
+	];
 
-  _this.cards = Array.prototype.slice.call(cardTypes, 0);
+  _this.cards = Array.prototype.slice.call(_this.events, 0);
 
   _this.cardDestroyed = function(index) {
     _this.cards.splice(index, 1);
   };
 
   _this.addCard = function() {
-    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-    newCard.id = Math.random();
     _this.cards.push(angular.extend({}, newCard));
   };
 
   _this.cardSwipedLeft = function(index) {
-    console.log('LEFT SWIPE');
     _this.index += 1;
-
+    _this.currentEvent = _this.all[_this.index];
     _this.addCard();
   };
 
   _this.cardSwipedRight = function(index) {
-    console.log('RIGHT SWIPE');
     _this.addCard();
   };
-
-}
+};
