@@ -22,11 +22,9 @@
     </div>
   </div>
   <div class="push-down-50 text-center" ng-controller="currentController as current">
-    <h1 class="wh-white">DEBUG: {{current}}</h1>
-    <!-- <h1 class="wh-white">DEBUG: {{  }}</h1>
-    <h1 class="wh-white">You stand to <span class="wh-gold">win</span> £{{events.currentEvent.class.type.event[0].market.outcome[0].odds.livePrice.priceDec * 10}}0</h2>
-    <h3 class="wh-white">The odds are {{events.currentEvent.class.type.event[0].market.outcome[0].odds.livePrice.priceFrac}}</h3>
-    <h4 class="wh-white push-down-50">{{events.currentEvent.class[0].name}}</h4>
-    <h4 class="wh-white">{{events.currentEvent.class[0].type.event.name}}</h4> -->
+    <h1 class="wh-white">You stand to <span class="wh-gold">win</span> £{{current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceDec * 10}}0</h2>
+    <h3 class="wh-white">The odds are {{current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceFrac}}</h3>
+    <h4 class="wh-white push-down-50">{{current.current.class.name}}</h4>
+    <h4 class="wh-white">{{current.current.class.type.event[1].name}}</h4>
   </div>
 </div>

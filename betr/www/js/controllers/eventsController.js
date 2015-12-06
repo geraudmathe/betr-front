@@ -9,13 +9,10 @@ function EventsController(Event, $state, $firebaseArray) {
   var _this = this;
 
   _this.moveToConfirmation = function(current) {
-    console.log(current);
     $state.go('confirmation', { current: current });
   };
 
   _this.saveCurrent = function(current) {
-    console.log(current);
-    // _this.events.$add(current);
     _this.moveToConfirmation(current);
   };
 
