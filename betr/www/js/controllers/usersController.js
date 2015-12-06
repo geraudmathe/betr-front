@@ -2,8 +2,8 @@ angular
   .module('betr')
   .controller('UsersController', UsersController);
 
-UsersController.$inject = ['User', 'TicketService'];
-function UsersController(User, TicketService) {
+UsersController.$inject = ['User', 'TicketService', '$state'];
+function UsersController(User, TicketService, $state) {
   var _this = this;
   _this.firstName = ' there!';
 
@@ -36,6 +36,10 @@ function UsersController(User, TicketService) {
     return !!_this.balance;
   };
 
+  _this.moveToSwipe = function() {
+    console.log('swiped right');
+    $state.go('swipe');
+  };
 
   if (_this.isLoggedIn()) {
     var data = JSON.parse(window.localStorage.getItem('betr-user-data'));
