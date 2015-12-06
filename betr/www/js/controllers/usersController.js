@@ -44,12 +44,12 @@ function UsersController(User, TicketService, $state) {
   };
 
   _this.placeBet = function(amount) {
-    console.log('betting ' + amount);
     _this.betAmount = amount;
   };
 
   _this.confirmBet = function(amount) {
-    
+    // place the bet with will
+    console.log('Placing bet with William Hill for ' + amount);
   };
 
   if (_this.isLoggedIn()) {
