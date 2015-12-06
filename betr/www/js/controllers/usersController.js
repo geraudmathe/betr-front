@@ -37,7 +37,9 @@ function UsersController(User, TicketService, $state) {
   };
 
   _this.moveToSwipe = function() {
-    $state.go('swipe');
+    if (_this.isLoggedIn()) {
+      $state.go('swipe');
+    };
   };
 
   if (_this.isLoggedIn()) {
