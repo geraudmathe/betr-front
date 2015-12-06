@@ -21,7 +21,6 @@ function EventsController(Event, TicketService, TDCardDelegate) {
 	var _this = this;
 
 	_this.all = [];
-	_this.singleEvent = {};
 
 	_this.getEvents = function() {
 		var ticket = TicketService.getTicket();
