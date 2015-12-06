@@ -1,15 +1,13 @@
 <div ng-controller="eventsController as events">
-  <td-cards>
-    <td-card ng-repeat="card in events.cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
-      <div class="image">
-        <div class="no-text">NOPE</div>
-        <img ng-src="{{card.image}}">
-        <div class="yes-text">LIKE</div>
+
+  <ion-slide-box>
+    <ion-slide ng-repeat="event in events.all">
+      <div class="slide-card">
+        <h1 class="wh-gold text-center push-down-50">{{ event.name }}</h1>
+        <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].name}} </h3>
+        <h1 class="wh-white text-center push-down-25"> CLOCK HERE</h1>
       </div>
-    </td-card>
-  </td-cards>
-  <h1>{{ events.currentEvent.name }}</h1>
-  <form class="animated fadeIn" ng-submit="events.getEvents()">
-    <button type="submit" class="pure-button wh-gold-bg">Get Events</button>
-  </form>
+    </ion-slide>
+  </ion-slide-box>
+
 </div>

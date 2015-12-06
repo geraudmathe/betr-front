@@ -144,3 +144,12 @@ td-card img {
 .pure-button-active {
   border: 1px solid white;
 }
+
+.slide-card {
+  min-width: 320px;
+  min-height: 480px;
+}
+
+.slider-pager {
+  display: none;
+}
