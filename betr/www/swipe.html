@@ -1,25 +1,29 @@
 <div ng-controller="eventsController as events">
-  <td-cards>
-    <td-card ng-repeat="card in events.cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
-      <div class="countdown countdown-container container">
-        <div class="clock row">
-          <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
-            <div class="wrap">
-              <div class="inner">
-                <div id="canvas-seconds" class="clock-canvas"></div>
-                  <div class="text">
-                    <p class="val">0</p>
-                    <p class="type-seconds type-time">SECONDS</p>
+
+
+  <ion-slide-box>
+    <ion-slide ng-repeat="event in events.all" on-swipe-right="events.saveCurrent(event)">
+      <div class="slide-card">
+        <h1 class="wh-gold text-center push-down-50">{{ event.name }}</h1>
+        <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].home | capitalize }} vs {{ event.class.type.event[0].away | capitalize }} </h3>
+
+        <div class="countdown countdown-container container">
+          <div class="clock row">
+            <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+              <div class="wrap">
+                <div class="inner">
+                  <div id="canvas-seconds" class="clock-canvas"></div>
+                    <div class="text">
+                      <p class="val">0</p>
+                      <p class="type-seconds type-time">SECONDS</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        </div>
-      <div class="image">
-        <div class="no-text">NOPE</div>
-        <img ng-src="{{card.image}}">
-        <div class="yes-text">LIKE</div>
+          </div>
+          
       </div>
-    </td-card>
-  </td-cards>
+    </ion-slide>
+  </ion-slide-box>
+
 </div>

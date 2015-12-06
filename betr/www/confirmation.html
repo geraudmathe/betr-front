@@ -1,0 +1,30 @@
+<div ng-controller="UsersController as users" on-swipe-left="users.moveToSwipe()">
+  <div class="push-down-100">
+    <h1 class="center-text">
+      <span class="wh-white light-text">Confim your</span><span class="wh-gold"> BET</span>
+    </h1>
+  </div>
+  <div class="push-down-50 pure-g text-center">
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(5)">
+        <button type="submit" class="pure-button bet-button">5</button>
+      </form>
+    </div>
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(10)">
+        <button type="submit" class="pure-button pure-button-active bet-button">10</button>
+      </form>
+    </div>
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(20)">
+        <button type="submit" class="pure-button bet-button">20</button>
+      </form>
+    </div>
+  </div>
+  <div class="push-down-50 text-center" ng-controller="currentController as current">
+    <h1 class="wh-white">You stand to <span class="wh-gold">win</span> £{{current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceDec * 10}}0</h2>
+    <h3 class="wh-white">The odds are {{current.current.class.type.event[1].market.outcome[0].odds.livePrice.priceFrac}}</h3>
+    <h4 class="wh-white push-down-50">{{current.current.class.name}}</h4>
+    <h4 class="wh-white">{{current.current.class.type.event[1].name}}</h4>
+  </div>
+</div>
