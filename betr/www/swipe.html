@@ -1,27 +1,13 @@
 <div ng-controller="eventsController as events">
-
-
   <ion-slide-box>
     <ion-slide ng-repeat="event in events.all" on-swipe-right="events.saveCurrent(event)">
-      <div class="slide-card">
+      <div class="slide-card centered push-down-50">
         <h1 class="wh-gold text-center push-down-50">{{ event.name }}</h1>
         <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].home | capitalize }} vs {{ event.class.type.event[0].away | capitalize }} </h3>
-
-        <div class="countdown countdown-container container">
-          <div class="clock row">
-            <div class="wrap">
-              <div class="inner">
-                <div id="canvas-seconds" class="clock-canvas"></div>
-                  <div class="text">
-                    <p class="val">0</p>
-                    <p class="type-seconds type-time">SECONDS</p>
-                  </div>
-                </div>
-              </div>
-          </div>
-
+      </div>
+      <div>
+        <h2 class="light-text text-center">{{event.timeRemaining}}</h2>
       </div>
     </ion-slide>
   </ion-slide-box>
-
 </div>

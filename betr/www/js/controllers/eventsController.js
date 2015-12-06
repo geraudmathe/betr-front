@@ -2,9 +2,9 @@ angular
   .module('betr')
   .controller('eventsController', EventsController);
 
-EventsController.$inject = ['Event', '$state', '$firebaseArray'];
+EventsController.$inject = ['Event', '$state'];
 
-function EventsController(Event, $state, $firebaseArray) {
+function EventsController(Event, $state) {
 
   var _this = this;
 
@@ -27,5 +27,15 @@ function EventsController(Event, $state, $firebaseArray) {
     Event.query(true, updateEvents);
   };
 
+  _this.loop = function(i) {
+    setTimeout(function() {
+      _this.timeRemaining = i;
+      i--;
+      i > 0 ? _this.loop(i) : i = 20;
+      loop(i);
+    }, 1000);
+  };
+
+  _this.loop(20);
   _this.getEvents();
 };
