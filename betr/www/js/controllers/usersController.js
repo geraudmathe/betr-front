@@ -37,7 +37,6 @@ function UsersController(User, TicketService, $state) {
   };
 
   _this.moveToSwipe = function() {
-    console.log('swiped right');
     $state.go('swipe');
   };
 

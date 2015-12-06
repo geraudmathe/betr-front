@@ -1,7 +1,7 @@
 <div ng-controller="eventsController as events">
 
   <ion-slide-box>
-    <ion-slide ng-repeat="event in events.all">
+    <ion-slide ng-repeat="event in events.all" on-swipe-right="events.moveToConfirmation(event)">
       <div class="slide-card">
         <h1 class="wh-gold text-center push-down-50">{{ event.name }}</h1>
         <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].name}} </h3>
