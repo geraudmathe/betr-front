@@ -2,9 +2,9 @@
 
   <ion-slide-box>
     <ion-slide ng-repeat="event in events.all" on-swipe-right="events.saveCurrent(event)">
-      <div class="slide-card">
+      <div ng-if="event.name === 'Rugby Union' || Darts" class="slide-card">
         <h1 class="wh-gold text-center push-down-50">{{ event.name }}</h1>
-        <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].name}} </h3>
+        <h3 class="wh-white light-text text-center push-down-50"> {{ event.class.type.event[0].home | capitalize }} vs {{ event.class.type.event[0].away | capitalize }} </h3>
         <h1 class="wh-white text-center push-down-25"> CLOCK HERE</h1>
       </div>
     </ion-slide>
