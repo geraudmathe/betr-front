@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular
-  .module('betr', ['ionic', 'ui.router', 'angular-jwt', 'ngResource', 'ionic.contrib.ui.tinderCards'])
+  .module('betr', ['ionic', 'ui.router', 'angular-jwt', 'ngResource'])
   .config(MainConfig)
   .constant('API', 'http://betr-betting.herokuapp.com/')
   .run(function($ionicPlatform) {
