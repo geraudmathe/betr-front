@@ -1,6 +1,20 @@
 <div ng-controller="eventsController as events">
   <td-cards>
     <td-card ng-repeat="card in events.cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+      <div class="countdown countdown-container container">
+        <div class="clock row">
+          <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+            <div class="wrap">
+              <div class="inner">
+                <div id="canvas-seconds" class="clock-canvas"></div>
+                  <div class="text">
+                    <p class="val">0</p>
+                    <p class="type-seconds type-time">SECONDS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       <div class="image">
         <div class="no-text">NOPE</div>
         <img ng-src="{{card.image}}">
