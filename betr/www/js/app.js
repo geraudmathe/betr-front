@@ -6,7 +6,7 @@
 angular
   .module('betr', ['ionic', 'ui.router', 'angular-jwt', 'ngResource', 'firebase'])
   .config(MainConfig)
-  .constant('API', 'http://betr-betting.herokuapp.com/')
+  .constant('API', 'https://567fbefd.ngrok.com/')
   .filter('capitalize', function() {
     return function(input) {
       if(input != null) {
