@@ -6,7 +6,8 @@
  * @license GPL 2
  * @link https://github.com/PragmaticMates/jquery-final-countdown
  */
- $('document').ready(function() {
+
+$('document').ready(function() {
      'use strict';
      
     $('.countdown').final_countdown({
