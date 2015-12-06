@@ -2,27 +2,32 @@ angular
   .module('betr')
   .controller('eventsController', EventsController);
 
-EventsController.$inject = ['Event', 'TicketService', '$state'];
+EventsController.$inject = ['Event', '$state', '$firebaseArray'];
 
-function EventsController(Event, TicketService, $state) {
+function EventsController(Event, $state, $firebaseArray) {
+
   var _this = this;
+
+  _this.moveToConfirmation = function(current) {
+    console.log(current);
+    $state.go('confirmation', { current: current });
+  };
+
+  _this.saveCurrent = function(current) {
+    console.log(current);
+    // _this.events.$add(current);
+    _this.moveToConfirmation(current);
+  };
+
   _this.all = [];
 	_this.current = {};
 
   function updateEvents(res) {
     _this.all = res;
-
-    // console.log(_this.currentEvent);
   };
 
   _this.getEvents = function() {
     Event.query(true, updateEvents);
-  };
-
-  _this.moveToConfirmation = function(current) {
-		
-    _this.current = current.toJSON();
-    $state.go('confirmation');
   };
 
   _this.getEvents();
