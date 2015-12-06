@@ -45,6 +45,11 @@ function UsersController(User, TicketService, $state) {
 
   _this.placeBet = function(amount) {
     console.log('betting ' + amount);
+    _this.betAmount = amount;
+  };
+
+  _this.confirmBet = function(amount) {
+    
   };
 
   if (_this.isLoggedIn()) {
