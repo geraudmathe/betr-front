@@ -47,9 +47,13 @@ function UsersController(User, TicketService, $state) {
     _this.betAmount = amount;
   };
 
-  _this.confirmBet = function(amount) {
+  _this.confirmBet = function(amount, betId, num, den) {
     // place the bet with will
-    console.log('Placing bet with William Hill for ' + amount);
+    console.log('Amount ' + amount + '. Bet ID: ' + betId + ' num: ' + num + ' den: ' + den);
+
+    Event.bet(amount, betId, num, den, function() {
+      console.log('Bet placed sucessfully');
+    });
   };
 
   if (_this.isLoggedIn()) {

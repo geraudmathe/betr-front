@@ -12,7 +12,11 @@ function Event($resource, API) {
 		{
 			'query' : {
 				method: 'GET',
-				isArray: true
+				isArray: true,
+			},
+			'bet' : {
+				method: 'POST',
+				url: API + 'bets',
 			}
 		}
 	);
