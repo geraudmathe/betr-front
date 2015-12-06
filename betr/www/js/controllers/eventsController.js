@@ -1,31 +1,21 @@
 angular
 	.module('betr')
 	.controller('eventsController', EventsController);
-	// .directive('noScroll', function($document) {
-
-	//   return {
-	//     restrict: 'A',
-	//     link: function($scope, $element, $attr) {
-
-	//       $document.on('touchmove', function(e) {
-	//         e.preventDefault();
-	//       });
-	//     }
-	//   }
-	// });
 
 EventsController.$inject = ['Event', 'TicketService'];
 
-function EventsController(Event, TicketService, TDCardDelegate) {
+function EventsController(Event, TicketService) {
 
 	var _this = this;
 
 	_this.all = [];
+	_this.index = 0;
 
 	_this.getEvents = function() {
 		var ticket = TicketService.getTicket();
 		_this.all = Event.query();
 		console.log(_this.all);
+		_this.currentEvent = _this.all[_this.index];
 	}
 
   var cardTypes = [
@@ -42,12 +32,15 @@ function EventsController(Event, TicketService, TDCardDelegate) {
     var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
     newCard.id = Math.random();
     _this.cards.push(angular.extend({}, newCard));
-  }
+  };
 
   _this.cardSwipedLeft = function(index) {
     console.log('LEFT SWIPE');
+    _this.index += 1;
+
     _this.addCard();
   };
+
   _this.cardSwipedRight = function(index) {
     console.log('RIGHT SWIPE');
     _this.addCard();
