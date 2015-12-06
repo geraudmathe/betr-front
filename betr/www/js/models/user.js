@@ -15,7 +15,7 @@ function User($resource, API) {
       },
       'balance': {
         url: API + 'balance',
-        method: 'GET'
+        method: 'GET',
       }
     }
   );
