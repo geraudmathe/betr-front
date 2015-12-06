@@ -6,25 +6,21 @@
     </div>
   </div>
 
-  <div class="pure-g push-down-25">
-  	<div ng-hide="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
+  <div class="pure-g push-down-25 center-text">
+  	<div ng-hide="users.isLoggedIn()" class="pure-u-1-1 center-text">
   		<form ng-submit="users.authorize()" class="pure-form pure-form-stacked">
   	    <fieldset>
-          <input class="wh-white-bg" ng-model="users.user.username" name="username" id="username" type="text" placeholder="Username">
-          <input class="wh-white-bg" ng-model="users.user.password" name="password" id="password" type="password" placeholder="Password">
+          <input class="wh-white-bg centered" ng-model="users.user.username" name="username" id="username" type="text" placeholder="Username">
+          <input class="wh-white-bg centered" ng-model="users.user.password" name="password" id="password" type="password" placeholder="Password">
           <div class="push-down-25">
           	<button type="submit" class="pure-button wh-gold-bg">Sign in</button>
           </div>
   	    </fieldset>
   		</form>
   	</div>
-    <div ng-show="users.isLoggedIn()" class="pure-u-1-8 center-text centered">
+    <div ng-show="users.isLoggedIn()" class="pure-u-1-1 center-text centered">
       <h1 class="wh-white light-text animated fadeInUp">Welcome {{ users.firstName }}</h1>
-      <h2 class="animated fadeIn">
-        <span class="wh-white light-text">Swipe </span>
-        <span class="wh-gold"> RIGHT</span>
-        <span class="wh-white light-text"> to start!</span>
-      </h2>
+      <h2 class="animated fadeIn"><span class="wh-white light-text">Swipe </span><span class="wh-gold"> RIGHT</span><span class="wh-white light-text"> to start!</span></h2>
       <form class="animated fadeIn" ng-submit="users.logout()">
         <button type="submit" class="pure-button wh-gold-bg">Logout</button>
       </form>
@@ -36,7 +32,7 @@
   </div>
 
   <div class="pure-g push-down-25" ng-controller="eventsController as events">
-    <div class="pure-u-1-8 center-text centered">
+    <div class="pure-u-1-1 center-text centered">
       <form class="animated fadeIn" ng-submit="events.getEvents()">
         <button type="submit" class="pure-button wh-gold-bg">Get events</button>
       </form>

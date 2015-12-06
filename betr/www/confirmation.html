@@ -1,0 +1,28 @@
+<div ng-controller="UsersController as users" on-swipe-left="users.moveToSwipe()">
+  <div class="push-down-100">
+    <h1 class="center-text">
+      <span class="wh-white light-text">Confim your</span><span class="wh-gold"> BET</span>
+    </h1>
+  </div>
+  <div class="push-down-50 pure-g text-center">
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(5)">
+        <button type="submit" class="pure-button bet-button">5</button>
+      </form>
+    </div>
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(10)">
+        <button type="submit" class="pure-button pure-button-active bet-button">10</button>
+      </form>
+    </div>
+    <div class="pure-u-1-3">
+      <form class="animated fadeIn" ng-submit="users.placeBet(20)">
+        <button type="submit" class="pure-button bet-button">20</button>
+      </form>
+    </div>
+  </div>
+  <div class="push-down-50 text-center">
+    <h1 class="wh-white">You stand to <span class="wh-gold">win</span> $$$</h2>
+    <h3 class="wh-white">The odds are ...</h3>
+  </div>
+</div>

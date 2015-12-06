@@ -30,11 +30,11 @@ function MainConfig($stateProvider, $urlRouterProvider, $httpProvider) {
   .state('swipe', {
     url: '/swipe',
     templateUrl: 'swipe.html',
+  })
+  .state('confirmation', {
+    url: '/confirmation',
+    templateUrl: 'confirmation.html',
   });
-  // .state('confirmation', {
-  //   url: '/confirmation',
-  //   templateUrl: 'confirmation.html',
-  // });
 
   $urlRouterProvider.otherwise('/');
 
