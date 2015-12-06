@@ -47,7 +47,7 @@ function UsersController(User, TicketService, $state) {
     _this.betAmount = amount;
   };
 
-  _this.confirmBet = function(amount, betId, num, den) {
+  _this.confirmBet = function(amount, id, priceNum, priceDen) {
     // place the bet with will
     console.log('Amount ' + amount + '. Bet ID: ' + betId + ' num: ' + num + ' den: ' + den);
 
